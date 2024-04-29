@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
+  const [list, setList] = useState(["sumit","vinnet","boby"])
   return (
     <div id="main">
-               {/* Do not remove the main div */}
+       <ol key={"relativeList"} id='relativeList'>
+             {list.map((name,indx)=>{
+              return <li key={`relativeListItem${indx}`} id={`relativeListItem${indx}`}>{name}</li>
+             })}
+              </ol>
     </div>
   )
 }
